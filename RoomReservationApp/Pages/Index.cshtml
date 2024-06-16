@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h2>Reservations</h2>
+<a asp-page="Create" class="btn btn-primary">Add New Reservation</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Room Number</th>
+            <th>Reserved By</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model.Records)
+        {
+            <tr>
+                <td>@reservation.RoomNumber</td>
+                <td>@reservation.ReservedBy</td>
+                <td>@reservation.StartTime.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@reservation.EndTime.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@reservation.Description</td>
+                <td>
+                    <a button type="button" asp-page="./Update" asp-route-id="@reservation.Id" class="btn btn-secondary">Edit</a>
+                    <a button type="button" asp-page="./Delete" asp-route-id="@reservation.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

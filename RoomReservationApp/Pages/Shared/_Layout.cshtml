@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RoomReservationApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RoomReservationApp.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background-color: #fff;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        footer {
+            background-color: #fff;
+            color: #333;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .sidebar {
+            background-color: #fff;
+            padding: 15px;
+            border-right: 1px solid #eaeaea;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 220px;
+        }
+
+        .main-content {
+            margin-left: 240px;
+            padding: 20px;
+        }
+
+        .card {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <a class="navbar-brand" asp-area="" asp-page="/Index">RoomReservationApp</a>
+        </div>
+        <nav class="nav flex-column">
+            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+            <a class="nav-link" asp-area="" asp-page="/Create">Create</a>
+        </nav>
+    </div>
+    <div class="main-content">
+      
+        <div class="container">
+            <main role="main" class="pb-3">
+                <div class="card">
+                    <div class="card-body">
+                        @RenderBody()
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+                &copy; 2024 - RoomReservationApp
+        </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿@page
+@model RoomReservationApp.Pages.UpdateModel
+@{
+}
+<h2>Update Reservation</h2>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="RoomReservation.RoomNumber" class="control-label"></label>
+        <input asp-for="RoomReservation.RoomNumber" class="form-control" />
+        <span asp-validation-for="RoomReservation.RoomNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RoomReservation.ReservedBy" class="control-label"></label>
+        <input asp-for="RoomReservation.ReservedBy" class="form-control" />
+        <span asp-validation-for="RoomReservation.ReservedBy" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RoomReservation.StartTime" class="control-label"></label>
+        <input type="datetime-local" asp-for="RoomReservation.StartTime" class="form-control" />
+        <span asp-validation-for="RoomReservation.StartTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RoomReservation.EndTime" class="control-label"></label>
+        <input type="datetime-local" asp-for="RoomReservation.EndTime" class="form-control" />
+        <span asp-validation-for="RoomReservation.EndTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RoomReservation.Description" class="control-label"></label>
+        <textarea asp-for="RoomReservation.Description" class="form-control"></textarea>
+        <span asp-validation-for="RoomReservation.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-success" />
+    </div>
+</form>
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
